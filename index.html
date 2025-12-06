@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Velocity Car Detailing</title>
+    <meta
+      name="description"
+      content="Velocity Car Detailing – premium mobile car detailing at your home or office."
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- Enhanced Navbar -->
+    <nav class="navbar">
+      <div class="nav-inner container">
+        <div class="nav-left">
+          <a href="/" class="nav-logo-link" aria-label="Velocity Shine home">
+            <img src="images/logonavbar.png" alt="Velocity Shine logo" class="nav-logo-img">
+          </a>
+        </div>
+
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#stats">Why Us</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <a href="tel:+15555555555" class="btn nav-cta">Call Now</a>
+        
+        <!-- Mobile menu toggle -->
+        <button class="nav-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileNav()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      
+      <!-- Mobile navigation -->
+      <div id="mobileNav">
+        <div class="mobile-nav-content">
+          <a href="#services" onclick="closeMobileNav()">Services</a>
+          <a href="#stats" onclick="closeMobileNav()">Why Us</a>
+          <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
+          <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
+          <a href="#faq" onclick="closeMobileNav()">FAQ</a>
+          <a href="tel:+15555555555" onclick="closeMobileNav()" class="mobile-cta">Call Now</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Full-Screen Hero -->
+    <header id="hero">
+        <!-- Mini car wash animation in top middle -->
+  <div class="hero-mini-scene" aria-hidden="true">
+    <div class="mini-road">
+      <div class="mini-car">
+        <div class="mini-suds mini-suds-left"></div>
+        <div class="mini-suds mini-suds-right"></div>
+      </div>
+    </div>
+  </div>   
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Velocity Mobile Car Detailing</h1>
+          <p class="hero-tagline">
+            Premium mobile car detailing delivered to your home or office.
+          </p>
+
+          <ul class="hero-list">
+            <li>Eco-friendly products</li>
+            <li>5-star rated customer experience</li>
+          </ul>
+
+          <div class="hero-buttons">
+            <a href="https://wa.me/15555555555?text=Hi%20I%20want%20to%20book%20a%20car%20detailing%20service" class="btn primary-btn">Call / WhatsApp</a>
+            <a href="#contact" class="btn secondary-btn">Book Online</a>
+          </div>
+        </div>
+
+        <!-- Enhanced Before / After slider -->
+        <div class="hero-image">
+          <div class="before-after-container">
+            <div class="ba-wrapper">
+              <!-- AFTER image -->
+              <img
+                src="images/imgA.png"
+                alt="Clean shiny car after detailing"
+                class="ba-img ba-after"
+                loading="eager"
+              />
+
+              <!-- BEFORE overlay -->
+              <div class="ba-before-wrap" id="baBeforeWrap">
+                <img
+                  src="images/imgB.png"
+                  alt="Car before detailing"
+                  class="ba-img ba-before"
+                  loading="eager"
+                />
+              </div>
+
+              <!-- Range slider handle -->
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                class="ba-slider"
+                id="baSlider"
+              />
+            </div>
+            <div class="ba-labels">
+              <span>Before</span>
+              <span>After</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats -->
+    <section id="stats">
+      <div class="container">
+        <div class="section-header">
+          <h2>Why Drivers Love Velocity </h2>
+          <p>Professional mobile detailing for busy people who love clean cars.</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">500+</div>
+            <h3>Cars Detailed</h3>
+            <p>From daily commuters to weekend toys, we’ve cleaned them all.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4.9★</div>
+            <h3>Average Rating</h3>
+            <p>Customers love our communication, results and reliability.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3+</div>
+            <h3>Years Mobile</h3>
+            <p>Local, partner-owned business serving Boston and nearby areas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2>Services &amp; Packages</h2>
+          <p>Choose the detail that fits your schedule and car condition.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div>
+              <h3>Basic Wash</h3>
+              <p class="service-price">$25</p>
+              <p class="service-meta">Perfect for a quick refresh.</p>
+              <ul>
+                <li>Hand wash &amp; rinse</li>
+                <li>Wheel &amp; tire clean</li>
+                <li>Quick interior vacuum</li>
+              </ul>
+            </div>
+            <button
+              class="btn btn-outline"
+              onclick="bookService('Basic Wash')"
+            >
+              Book Basic Wash
+            </button>
+          </div>
+
+          <div class="service-card">
+            <div>
+              <h3>Interior Clean</h3>
+              <p class="service-price">$50</p>
+              <p class="service-meta">Deep interior reset.</p>
+              <ul>
+                <li>Deep vacuum (seats &amp; carpets)</li>
+                <li>Dashboard &amp; console detail</li>
+                <li>Interior glass cleaned</li>
+              </ul>
+            </div>
+            <button
+              class="btn btn-outline"
+              onclick="bookService('Interior Clean')"
+            >
+              Book Interior
+            </button>
+          </div>
+
+          <div class="service-card">
+            <div>
+              <h3>Full Detail</h3>
+              <p class="service-price">$100</p>
+              <p class="service-meta">Showroom-ready inside &amp; out.</p>
+              <ul>
+                <li>Complete exterior wash</li>
+                <li>Wax &amp; light machine polish</li>
+                <li>Full interior detail</li>
+              </ul>
+            </div>
+            <button
+              class="btn"
+              onclick="bookService('Full Detail')"
+            >
+              Book Full Detail
+            </button>
+          </div>
+        </div>
+
+        <!-- Add-ons -->
+        <div class="addons">
+          <strong>Popular add-ons:</strong>
+          <ul>
+            <li>Pet hair removal +$20</li>
+            <li>Headlight restoration +$30</li>
+            <li>Engine bay detail +$25</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>About Velocity </h2>
+        </div>
+        <div class="about-container">
+          <img
+            src="images/logo.png"
+            alt="Detailer working on a car"
+          />
+          <p>
+            Velocity Car Detailing is a partner-owned, fully mobile
+            detailing service. We bring professional tools, eco-friendly
+            chemicals and years of experience straight to your home or office.
+            Our mission is simple: make your car feel brand-new again without
+            you ever waiting in a shop.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <h2>Results &amp; Gallery</h2>
+          <p>Real cars, real details – here’s what you can expect.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="images/img.jpg"
+              alt="Foam wash on black car"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/img1.jpg"
+              alt="Detailer polishing car paint"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/img2.jpg"
+              alt="Clean car interior after detailing"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/img3.jpg"
+              alt="Team working on car detailing"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <h2>Customer Reviews</h2>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+              “Amazing service at my home! My SUV looked brand-new in under 2
+              hours.” — <strong>John D.</strong>
+            </p>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+              “Super easy to book and they showed up right on time. Interior
+              looks spotless.” — <strong>Sarah K.</strong>
+            </p>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+              “Highly recommend Velocity. Great communication and incredible
+              results.” — <strong>Mike L.</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="google-reviews-box">
+          Want to see more? We’re proudly rated 4.9★ on Google.
+          <br />
+          <a href="#" class="btn btn-outline" style="margin-top:0.8rem;">
+            View Google Reviews
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Quick answers to the most common questions we get.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How long does a full detail take?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              A typical full detail takes about 2–3 hours depending on the size
+              and condition of the vehicle. We’ll give you a more accurate time
+              estimate when you book.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do I need to provide water or power?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              In most cases we bring everything we need, including water and
+              power. If your location has special access rules (parking garage,
+              gate codes), just let us know in the notes when booking.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can you come to my apartment or workplace?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes, as long as detailing is allowed on the property and there’s a
+              safe place for us to work around your car. We regularly service
+              apartments, office lots and home driveways.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I pay?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              You can pay after the job via cash, card or contactless payment.
+              For fleet or recurring customers we can also set up invoices.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Book a Service</h2>
+      <p>Tell us where your car is parked and when you’d like us there.</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <!-- Left: Instant booking form -->
+      <div class="booking-card">
+        <div class="booking-header">
+          <h3>Instant Booking</h3>
+          <span class="badge">Avg. response 10–15 min</span>
+        </div>
+
+        <div class="booking-steps">
+          <span>Choose your service</span>
+          <span>Pick a date &amp; time</span>
+          <span>We confirm &amp; arrive</span>
+        </div>
+
+        <form id="bookingForm">
+          <div class="form-row-inline">
+            <div class="form-row">
+              <label class="input-label">Name</label>
+              <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-row">
+              <label class="input-label">Phone</label>
+              <input type="tel" name="phone" placeholder="Phone" required>
+            </div>
+          </div>
+
+          <div class="form-row-inline">
+            <div class="form-row">
+              <label class="input-label">Email (optional)</label>
+              <input type="email" name="email" placeholder="Email">
+            </div>
+            <div class="form-row">
+              <label class="input-label">Address or Location</label>
+              <input type="text" name="address" placeholder="Street / Area" required>
+            </div>
+          </div>
+
+          <div class="form-row-inline">
+            <div class="form-row">
+              <label class="input-label">Service</label>
+              <select name="service" required>
+                <option value="">Select Service</option>
+                <option value="Basic Wash">Basic Wash</option>
+                <option value="Interior Clean">Interior Clean</option>
+                <option value="Full Detail">Full Detail</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label class="input-label">Preferred Date &amp; Time</label>
+              <input type="datetime-local" name="datetime" required>
+            </div>
+          </div>
+
+          <!-- Availability Status Display -->
+          <div id="availabilityStatus" style="margin: 1rem 0; padding: 0.75rem; border-radius: 8px; background: #f8fafc; border-left: 4px solid #e2e8f0; font-size: 0.9rem; min-height: 1.5rem;"></div>
+
+          <div class="form-row">
+            <label class="input-label">Notes</label>
+            <textarea name="notes" placeholder="Car make/model, color, plate or any special requests"></textarea>
+          </div>
+
+          <button type="submit" class="btn">Submit Booking</button>
+        </form>
+
+        <p class="booking-note">
+          No payment is taken online. We’ll confirm your booking and final price by call or text.
+        </p>
+      </div>
+
+      <!-- Right: WhatsApp card -->
+      <aside class="whatsapp-card">
+        <div class="whatsapp-pill">Fast replies</div>
+        <h3>Prefer WhatsApp?</h3>
+        <p>Tap below to send us your car photos and location. We&apos;ll confirm pricing and availability in minutes.</p>
+
+        <a
+          href="https://wa.me/15555555555?text=Hi%20I%20want%20to%20book%20a%20car%20detailing%20service"
+          class="btn whatsapp-btn"
+          target="_blank"
+          rel="noopener"
+        >
+          Book via WhatsApp
+        </a>
+
+        <ul class="whatsapp-list">
+          <li>Ask about same-day availability</li>
+          <li>Share multiple cars or fleet photos</li>
+          <li>Set up monthly or quarterly detailing</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+     
+    <!-- Location / Service Area -->
+    <section id="location">
+      <div class="container">
+        <div class="section-header">
+          <h2>Service Area</h2>
+        </div>
+        <div class="location-box">
+          <p>
+            Based in <strong>Boston, MA</strong>. We currently serve:
+          </p>
+          <ul>
+            <li>Downtown Boston, Back Bay, South End</li>
+            <li>Cambridge, Somerville, Brookline</li>
+            <li>Charlestown, Allston, Brighton</li>
+            <li>South Boston, Dorchester</li>
+            <li>ZIPs: <strong>02108</strong>, <strong>02115</strong>, <strong>02116</strong>, <strong>02118</strong>, <strong>02139</strong>, <strong>02144</strong>, <strong>02446</strong> and more</li>
+          </ul>
+          <p style="margin-top:0.4rem;">
+            Not sure if we come to you? Send us a quick WhatsApp message with
+            your ZIP code.
+          </p>
+
+          <!-- Boston Google Maps embed -->
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47262.62149888846!2d-71.09416199999999!3d42.3600825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3652d0d3d311b%3A0x787cbf240162e8a0!2sBoston%2C%20MA!5e0!3m2!1sen!2sus!4v1733356800000!5m2!1sen!2sus"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="final-cta">
+      <div class="container">
+        <div class="section-header">
+          <h2>Ready to Make Your Car Shine?</h2>
+          <p>
+            Book a mobile detail today and enjoy that fresh-detailed feeling
+            without leaving home.
+          </p>
+          <div class="hero-cta-group" style="justify-content:center;">
+            <a href="#contact" class="btn">Book Now</a>
+            <a href="tel:+15555555555" class="btn btn-outline">Call / Text</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand Column -->
+          <div class="footer-col">
+            <div class="footer-brand">
+              <div class="nav-logo"></div>
+              <div>
+                <h4>Velocity</h4>
+                <p class="footer-tagline">Mobile Car Detailing</p>
+              </div>
+            </div>
+            <p class="footer-desc">Professional mobile detailing service in Boston. We bring the shine to you.</p>
+            <div class="footer-social">
+              <a href="https://wa.me/15555555555" aria-label="WhatsApp">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links Column -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#services">Services</a></li>
+              <li><a href="#about">Why Us</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#reviews">Reviews</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Services Column -->
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="#services">Basic Wash</a></li>
+              <li><a href="#services">Interior Clean</a></li>
+              <li><a href="#services">Full Detail</a></li>
+              <li><a href="#services">Add-ons</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Column -->
+          <div class="footer-col">
+            <h4>Get in Touch</h4>
+            <ul class="footer-contact">
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                <a href="tel:+15555555555">+1 (555) 555-5555</a>
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <a href="mailto:info@velocity.com">info@velocityshine.com</a>
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Boston, MA</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 Velocity Mobile Detailing. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <span>•</span>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating CTA bar (mobile) -->
+    <div class="floating-cta">
+      <a href="tel:+15555555555" class="btn-outline btn">Call</a>
+      <a href="#contact" class="btn">Book Now</a>
+    </div>
+
+    <!-- Floating WhatsApp button -->
+    <!-- <a
+      href="https://wa.me/15555555555?text=Hi%20I%20want%20to%20book%20a%20car%20detailing%20service"
+      class="whatsapp-float"
+      aria-label="Chat on WhatsApp"
+    >
+      WA
+    </a> -->
+  </body>
+</html>

@@ -37,7 +37,7 @@
           <a href="#faq">FAQ</a>
         </div>
 
-        <a href="tel:+15555555555" class="btn nav-cta">Call Now</a>
+        <a href="tel:+15555555555" class="nav-cta">Call Now</a>
         
         <!-- Mobile menu toggle -->
         <button class="nav-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileNav()">
@@ -644,5 +644,20 @@
     >
       WA
     </a> -->
+
+    <!-- Popup Notification Modal -->
+    <div id="notificationModal" class="notification-modal">
+      <div class="notification-content">
+        <div class="notification-icon" id="notificationIcon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3 id="notificationTitle">Booking Confirmed!</h3>
+        <p id="notificationMessage"></p>
+        <button class="btn notification-btn" onclick="closeNotification()">Got it!</button>
+      </div>
+    </div>
   </body>
 </html>

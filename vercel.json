@@ -2,16 +2,7 @@
   "version": 2,
   "routes": [
     {
-      "src": "/(styles\\.css|script\\.js|robots\\.txt|sitemap\\.xml)",
-      "dest": "/$1"
-    },
-    {
-      "src": "/images/(.*)",
-      "dest": "/images/$1"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",

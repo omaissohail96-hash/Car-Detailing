@@ -1668,13 +1668,17 @@ footer {
   .nav-links { display: none; }
   .nav-cta { 
     display: inline-flex;
-    font-size: 0.85rem;
-    padding: 0.5em 2.2em;
-    margin: 0em 0em 0em 8.8em; /* example margin */
+    font-size: 0.8rem;
+    padding: 0.45em 0.9em;
+    margin: 0;
+    margin-left: auto;
+    margin-right: 0.5rem;
+    white-space: nowrap;
   }
 
   .nav-toggle {
     display: flex;
+    flex-shrink: 0;
   }
 
   .container { padding-left: 1rem; padding-right: 1rem; }
@@ -1708,6 +1712,41 @@ footer {
   .whatsapp-float { right: 0.8rem; bottom: 5.2rem; }
 
   .footer-grid { grid-template-columns: 1fr; padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Small phones (iPhone SE, small Android) */
+@media (max-width: 375px) {
+  .nav-cta {
+    font-size: 0.75rem;
+    padding: 0.5em 1.6em;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .nav-cta {
+    font-size: 0.7rem;
+    padding: 0.4em 0.7em;
+  }
+  
+  .nav-logo-img {
+    transform: scale(1.5);
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav-cta {
+    font-size: 0.65rem;
+    padding: 0.35em 0.6em;
+  }
+  
+  .nav-logo-img {
+    transform: scale(1.3);
+    width: 38px;
+    height: 38px;
+  }
 }
 
 /* ------------------------------

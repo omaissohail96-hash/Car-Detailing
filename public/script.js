@@ -137,11 +137,12 @@ form?.addEventListener("submit", async (e) => {
     const json = await res.json();
 
     if (json.success) {
-      alert(`Booking confirmed! ID: ${json.id}\n${json.message}\nEstimated duration: ${json.estimatedDuration}`);
+      const message = `Booking ID: ${json.id}\n${json.message}\nEstimated duration: ${json.estimatedDuration}`;
+      showNotification('Booking Confirmed! 🎉', message, 'success');
       form.reset();
       document.getElementById('availabilityStatus').innerHTML = '';
     } else {
-      let message = json.message || "Booking failed. Try again.";
+      let message = json.message || "Booking failed. Please try again.";
       if (json.suggestedTimes && json.suggestedTimes.length > 0) {
         message += "\n\nSuggested available times:\n";
         json.suggestedTimes.forEach((time, index) => {
@@ -149,10 +150,10 @@ form?.addEventListener("submit", async (e) => {
           message += `${index + 1}. ${date.toLocaleDateString()} ${date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}\n`;
         });
       }
-      alert(message);
+      showNotification('Booking Unavailable', message, 'error');
     }
   } catch (err) {
-    alert("There was an error submitting your booking.");
+    showNotification('Oops! Something went wrong', 'There was an error submitting your booking. Please try again or contact us directly.', 'error');
     console.error(err);
   } finally {
     if (submitBtn) {
@@ -247,3 +248,67 @@ function handleNavbarScroll() {
     navbar.classList.remove('scrolled');
   }
 }
+
+// ------------------------------
+// Notification Modal Functions
+// ------------------------------
+function showNotification(title, message, type = 'success') {
+  const modal = document.getElementById('notificationModal');
+  const icon = document.getElementById('notificationIcon');
+  const titleEl = document.getElementById('notificationTitle');
+  const messageEl = document.getElementById('notificationMessage');
+  
+  if (!modal || !icon || !titleEl || !messageEl) return;
+  
+  // Set content
+  titleEl.textContent = title;
+  messageEl.textContent = message;
+  
+  // Set icon style
+  icon.className = 'notification-icon ' + type;
+  
+  // Update icon SVG based on type
+  if (type === 'error') {
+    icon.innerHTML = `
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="15" y1="9" x2="9" y2="15"></line>
+        <line x1="9" y1="9" x2="15" y2="15"></line>
+      </svg>
+    `;
+  } else {
+    icon.innerHTML = `
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+    `;
+  }
+  
+  // Show modal
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeNotification() {
+  const modal = document.getElementById('notificationModal');
+  if (!modal) return;
+  
+  modal.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+// Close notification when clicking outside
+document.addEventListener('click', (e) => {
+  const modal = document.getElementById('notificationModal');
+  if (modal && e.target === modal) {
+    closeNotification();
+  }
+});
+
+// Close notification with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeNotification();
+  }
+});

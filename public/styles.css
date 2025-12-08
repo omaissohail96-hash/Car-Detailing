@@ -215,7 +215,28 @@ button.btn:hover {
 }
 
 .nav-cta {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  padding: 0.35em 1.9em;
+  text-decoration: none;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  margin-top: 0.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.nav-cta:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
 }
 
 /* Mobile Navigation Toggle */
@@ -1564,19 +1585,6 @@ footer {
   }
 }
 
-/* Show Call Now on mobile instead of toggle */
-@media (max-width: 767px) {
-  .nav-cta {
-    display: inline-flex;
-    font-size: 0.85rem;
-    padding: 0.5em 1em;
-  }
-  
-  #mobileNav {
-    display: none;
-  }
-}
-
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
@@ -1584,6 +1592,7 @@ footer {
 
   .nav-cta {
     display: inline-flex;
+    margin-top: -0.3em;
   }
 
   .nav-toggle {
@@ -1654,7 +1663,15 @@ footer {
   .nav-logo-img { transform: scale(1.8); width:48px; height:48px; border-radius:6px; }
 
   .nav-links { display: none; }
-  .nav-cta { display: none; }
+  .nav-cta { 
+    display: inline-flex;
+    font-size: 0.85rem;
+    padding: 0.5em 1em;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
 
   .container { padding-left: 1rem; padding-right: 1rem; }
 

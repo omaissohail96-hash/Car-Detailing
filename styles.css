@@ -1702,6 +1702,11 @@ footer {
   #contact .contact-wrapper { grid-template-columns: 1fr; }
   .booking-card, .whatsapp-card { width: 100%; }
 
+  .badge {
+    font-size: 0.5rem;
+    padding: 0.15rem 0.45rem;
+  }
+
   input, select, textarea { font-size: 1rem; padding: 0.85em 0.9em; }
 
   .about-container { padding: 1.25rem; grid-template-columns: 1fr; }
